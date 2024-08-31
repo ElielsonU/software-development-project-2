@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student - {{ student.name }}</title>
+</head>
+
+<body>
+  <section>
+    <p>Name: <strong>{{ student.name }}</strong></p>
+    <p>Email: <a href="mailto:student.email">{{ student.email }}</a></p>
+    <p>CPF: <strong>{{ student.cpf }}</strong></p>
+    <p>Birthday: <strong>{{ student.birthday }}</strong></p>
+    {% if student.image.url is not None %}
+    <img src="{{ student.image.url|default:''}}" alt="{{ student.name }}">
+    {% endif %}
+  </section>
+</body>
+
+</html>

@@ -6,4 +6,4 @@ class Student(models.Model):
   email = models.EmailField()
   cpf = models.CharField(max_length=11)
   birthday = models.DateField()
-  image = models.ImageField(upload_to='alunos/', null=True, blank=True)
+  image = models.ImageField(upload_to='students/', null=True, blank=True)

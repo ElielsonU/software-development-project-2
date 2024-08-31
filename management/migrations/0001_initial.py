@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(max_length=254)),
                 ('cpf', models.CharField(max_length=11)),
                 ('birthday', models.DateField()),
-                ('image', models.ImageField(blank=True, null=True, upload_to='alunos/')),
+                ('image', models.ImageField(blank=True, null=True, upload_to='students/')),
             ],
         ),
     ]
