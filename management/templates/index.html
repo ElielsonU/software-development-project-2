@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,32 +7,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alunos</title>
+  <link rel="stylesheet" href="{% static 'globals.css' %}">
+  <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
 
 <body>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for student in students %}
-      <tr>
-        <th>{{ student.name }}</th>
-        <th>{{ student.email }}</th>
-        <th><a href="{% url 'student_detail' student.id %}">Details</a></th>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">submit</button>
-  </form>
+  <header>
+    <img src="" alt="" srcset="">
+  </header>
+  <main>
+    <section class="users-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+          <tr>
+            <th>{{ student.name }}</th>
+            <th>{{ student.email }}</th>
+            <th><a href="{% url 'student_detail' student.id %}">Details</a></th>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit">submit</button>
+    </form>
+  </main>
 </body>
-
 </html>

@@ -13,6 +13,8 @@
     <p>Email: <a href="mailto:student.email">{{ student.email }}</a></p>
     <p>CPF: <strong>{{ student.cpf }}</strong></p>
     <p>Birthday: <strong>{{ student.birthday }}</strong></p>
+    <p>Course: <strong>{{ student.course.name }}</strong></p>
+    <p>City: <strong>{{ student.city.name }}</strong></p>
     {% if student.image.url is not None %}
     <img src="{{ student.image.url|default:''}}" alt="{{ student.name }}">
     {% endif %}
